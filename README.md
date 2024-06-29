@@ -10,3 +10,9 @@ This is a Vue3 template site created 2024-06-29.
 - Router
 - Prettier
 - ESLint
+
+## reformat based on .prettier.json settings
+
+```
+npm run format
+```
