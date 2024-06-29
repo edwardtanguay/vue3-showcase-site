@@ -1,17 +1,16 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
+import SiteTitle from './components/SiteTitle.vue'
+import SiteNav from './components/SiteNav.vue';
 import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
+	<SiteTitle title="Info Site" />
+	<SiteNav />
 	<header>
 		<div class="wrapper">
 			<HelloWorld msg="You created it!" subtitle="A great site" />
-
-			<nav>
-				<RouterLink to="/">Home</RouterLink>
-				<RouterLink to="/about">About</RouterLink>
-			</nav>
 		</div>
 	</header>
 
