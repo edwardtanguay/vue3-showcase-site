@@ -4,9 +4,9 @@ This is a Vue3 template site created 2024-06-29.
 
 ## tech features
 
--   Vue 3 with Vite
--   TypeScript
--   Tailwind/Sass
--   Router
--   Prettier
--   ESLint
+- Vue 3 with Vite
+- TypeScript
+- Tailwind/Sass
+- Router
+- Prettier
+- ESLint
