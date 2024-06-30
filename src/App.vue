@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import SiteTitle from './components/SiteTitle.vue'
 import SiteNav from './components/SiteNav.vue'
+
+
 </script>
 
 <template>
