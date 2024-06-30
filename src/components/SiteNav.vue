@@ -2,6 +2,7 @@
 	<nav class="bg-gray-400 flex gap-4 px-2 pb-1 pt-1 md:pt-0 rounded mb-3">
 		<router-link to="/">Home</router-link>
 		<router-link to="/techbooks">Tech Books</router-link>
+		<router-link to="/examples001">Examples 001</router-link>
 		<router-link to="/about">About</router-link>
 	</nav>
 </template>
