@@ -15,7 +15,7 @@ TODO-GIF
 
 ## component props
 
-- **SiteTitle.vue**
+**SiteTitle.vue**
 
 ```ts
 <script setup lang="ts">
@@ -27,6 +27,12 @@ defineProps<{
 <template>
 	<h1 class="text-4xl">{{ title }}</h1>
 </template>
+```
+
+**App.vue**
+
+```ts
+<SiteTitle title="Info Site" />
 ```
 
 ## reformat
