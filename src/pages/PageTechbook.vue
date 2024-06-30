@@ -1,8 +1,9 @@
 <script lang="ts">
 import type { Techbook } from '@/types'
-import _techbooks from '../data/techbooks.json'
+import _techbooks from '@/data/techbooks.json'
 import { useRoute } from 'vue-router'
 import { defineComponent, ref } from 'vue'
+import SingleTechbook from '@/components/SingleTechbook.vue'
 
 export default defineComponent({
 	setup() {
@@ -16,6 +17,9 @@ export default defineComponent({
 			techbook,
 			id
 		}
+	},
+	components: {
+		SingleTechbook
 	}
 })
 </script>
@@ -26,9 +30,7 @@ export default defineComponent({
 			<p>Sorry, no tech book found with id {{ id }}.</p>
 		</div>
 		<div v-if="techbook">
-			<p>
-				Showing <strong>{{ techbook.title }}</strong> as a single techbook
-			</p>
+			<SingleTechbook :techbook="techbook" />
 		</div>
 	</section>
 </template>

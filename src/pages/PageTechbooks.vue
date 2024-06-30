@@ -1,7 +1,7 @@
 <script lang="ts">
 import type { Techbook } from '@/types'
-import _techbooks from '../data/techbooks.json'
-import SingleTechbook from '../components/SingleTechbook.vue'
+import _techbooks from '@/data/techbooks.json'
+import SingleTechbook from '@/components/SingleTechbook.vue'
 
 const techbooks: Techbook[] = structuredClone(_techbooks)
 techbooks.sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1))
