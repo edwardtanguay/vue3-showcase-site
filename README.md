@@ -72,7 +72,7 @@ defineProps<{
 </template>
 ```
 
-**HomeView.vue**
+**PageHome.vue**
 
 ```ts
 <InfoItem>
