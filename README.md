@@ -2,7 +2,7 @@
 
 This is a Vue 3 site with numerous common features. It can be used as a starter site or a site to learn Vue. 
 
-TODO-GIF
+![singleandlist](https://github.com/edwardtanguay/vue3-showcase-site/assets/446574/1f937ee2-2be3-434c-bfd1-f0906801c8c3)
 
 ## tech features
 
