@@ -8,14 +8,20 @@ export default defineComponent({
 		const increment = () => {
 			count.value++
 		}
-		return { count, increment }
+
+		const decrement = () => {
+			count.value--
+		}
+
+		return { count, increment, decrement }
 	}
 })
 </script>
 
 <template>
 	<div class="flex gap-2">
-		<button class="btn" @click="increment">+</button>
+		<button class="btn w-[2rem]" @click="decrement">-</button>
 		<p class="text-2xl">{{ count }}</p>
+		<button class="btn w-[2rem]" @click="increment">+</button>
 	</div>
 </template>

@@ -41,6 +41,6 @@ export default defineComponent({
 	</ExampleBox>
 	<ExampleBox>
 		<template #title>Interactive Counter</template>
-		<ExampleCounter/>
+		<ExampleCounter class="mt-2"/>
 	</ExampleBox>
 </template>
