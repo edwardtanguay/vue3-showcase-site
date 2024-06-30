@@ -8,3 +8,11 @@ import { RouterLink } from 'vue-router'
 		<RouterLink to="/about">About</RouterLink>
 	</nav>
 </template>
+
+<style scoped lang="scss">
+nav {
+	a.router-link-active {
+		color: rgb(255, 251, 0);
+	}
+}
+</style>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import SiteTitle from './components/SiteTitle.vue'
-import SiteNav from './components/SiteNav.vue';
+import SiteNav from './components/SiteNav.vue'
 </script>
 
 <template>
