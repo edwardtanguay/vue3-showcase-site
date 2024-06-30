@@ -16,7 +16,7 @@ export default defineComponent({
 <template>
 	<div class="bg-gray-200 p-3 rounded mb-3 min-h-[8rem] flex gap-3">
 		<img :src="`images/${techbook.idCode}.jpg`" alt="book" class="w-[6rem] mdBook" />
-		<section>
+		<section class="w-full">
 			<div class="bookTitle font-semibold md:text-xl">
 				<img
 					:src="`images/${techbook.idCode}.jpg`"
@@ -26,7 +26,15 @@ export default defineComponent({
 					techbook.title
 				}}</RouterLink>
 			</div>
-			<div class="bookDescription italic">{{ techbook.description }}</div>
+			<div class="bookDescription italic w-full">{{ techbook.description }}</div>
 		</section>
 	</div>
 </template>
+
+<style scoped lang="scss">
+@media (max-width: 767px) {
+	.mdBook {
+		display: none;
+	}
+}
+</style>
