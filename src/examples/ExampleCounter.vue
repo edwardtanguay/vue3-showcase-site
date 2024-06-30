@@ -1,14 +1,21 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
 	setup() {
-		const message = 'nnn';
-		return {message}
+		const count = ref(0)
+
+		const increment = () => {
+			count.value++
+		}
+		return { count, increment }
 	}
 })
 </script>
 
 <template>
-	<p>the counter: {{message}}</p>
+	<div class="flex gap-2">
+		<button class="btn" @click="increment">+</button>
+		<p class="text-2xl">{{ count }}</p>
+	</div>
 </template>

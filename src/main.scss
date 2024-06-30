@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+	.btn {
+		@apply bg-gray-500 text-white text-xl pt-0 pb-2 px-2 rounded;
+	}
 	.smallcaps {
 		font-variant: small-caps;
 	}
