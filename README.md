@@ -13,7 +13,6 @@ TODO-GIF
 - component props
 - slot components
 - unit testing with Vitest
-- e2e testing with Playwright - TODO
 - Prettier
 - ESLint
 
@@ -106,16 +105,11 @@ defineProps<{
 ## unit testing with Vitest
 
 ```
-npm run:unit
+npm t
 ```
 
 ![grafik](https://github.com/edwardtanguay/vue3-showcase-site/assets/446574/476bc544-eec3-47e8-8533-550f60fdfb04)
 
-## e2e testing with Playwright
-
-```
-npm run:e2e
-```
 
 TODO-IMAGE
 
