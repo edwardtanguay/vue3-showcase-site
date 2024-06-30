@@ -1,15 +1,17 @@
 <script lang="ts">
 import type { Techbook } from '@/types'
 import _techbooks from '../data/techbooks.json'
-import { defineComponent } from 'vue'
+import { useRoute } from 'vue-router'
+import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
 	setup() {
 		const test = 'hello'
-		const id = 18
+		const route = useRoute()
+		const id = ref(route.params.id as string)
 
 		const techbooks: Techbook[] = structuredClone(_techbooks)
-		const techbook = techbooks.find((m) => m.id === id)
+		const techbook = techbooks.find((m) => m.id === Number(id.value))
 
 		return {
 			techbook,
