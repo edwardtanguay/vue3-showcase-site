@@ -32,11 +32,23 @@ export default defineComponent({
 		</template>
 		<section class="w-full">
 			<div class="bookTitle font-semibold md:text-xl">
-				<img
-					:src="`/images/${techbook.idCode}.jpg`"
-					alt="book"
-					class="w-[4rem] float-right m-2 md:hidden"
-				/>
+				<template v-if="context === 'list'">
+					<RouterLink :to="`/techbooks/${techbook.id}`" class="underline">
+						<img
+							:src="`/images/${techbook.idCode}.jpg`"
+							alt="book"
+							class="w-[4rem] float-right m-2 md:hidden"
+						/>
+					</RouterLink>
+				</template>
+				<template v-if="context === 'single'">
+					<img
+						:src="`/images/${techbook.idCode}.jpg`"
+						alt="book"
+						class="w-[4rem] float-right m-2 md:hidden"
+					/>
+				</template>
+
 				<template v-if="context === 'list'">
 					<RouterLink :to="`/techbooks/${techbook.id}`" class="underline">{{
 						techbook.title
