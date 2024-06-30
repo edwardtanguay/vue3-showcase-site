@@ -1,5 +1,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
+import ExampleBox from '@/components/ExampleBox.vue'
 
 export default defineComponent({
 	setup() {
@@ -21,10 +22,19 @@ export default defineComponent({
 			message,
 			colors
 		}
+	},
+	components: {
+		ExampleBox
 	}
 })
 </script>
 <template>
-	<p>Message: [{{ message }}]</p>
-	<p>{{ colors.join(', ') }}</p>
+	<ExampleBox>
+		<template #title>Simple Message</template>
+		<p>Message: [{{ message }}]</p>
+	</ExampleBox>
+	<ExampleBox>
+		<template #title>Display Simple Array</template>
+		<p>{{ colors.join(', ') }}</p>
+	</ExampleBox>
 </template>

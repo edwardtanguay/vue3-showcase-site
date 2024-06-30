@@ -1,1 +1,2 @@
-- .. move about content to page Examples 001
+- x move about content to page Examples 001
+- .. make ExampleBox
