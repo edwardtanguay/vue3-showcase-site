@@ -9,6 +9,9 @@ export default defineComponent({
 			type: {} as () => Techbook,
 			required: true
 		}
+	}, 
+	components: {
+		RouterLink
 	}
 })
 </script>
