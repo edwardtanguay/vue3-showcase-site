@@ -17,6 +17,18 @@ TODO-GIF
 - Prettier
 - ESLint
 
+    
+## setup
+
+- clone repository
+- `npm i`
+- `npm run dev`
+
+## change port
+
+- **package.json**, line 7
+- `"dev": "vite --port 3010 --open",`
+
 ## component props
 
 **SiteTitle.vue**
