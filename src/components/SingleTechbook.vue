@@ -22,7 +22,6 @@ export default defineComponent({
 
 <template>
 	<div class="bg-gray-200 p-3 rounded mb-3 min-h-[8rem] flex gap-3">
-		[{{ context }}]
 		<img :src="`/images/${techbook.idCode}.jpg`" alt="book" class="w-[6rem] mdBook" />
 		<section class="w-full">
 			<div class="bookTitle font-semibold md:text-xl">
@@ -30,7 +29,7 @@ export default defineComponent({
 					:src="`/images/${techbook.idCode}.jpg`"
 					alt="book"
 					class="w-[4rem] float-right m-2 md:hidden"
-				/><RouterLink :to="`/techbooks/${techbook.id}`" class="underline">{{
+				/><RouterLink :to="`/techbooks/${techbook.id}`" :class="context === 'list' ? 'underline' : ''">{{
 					techbook.title
 				}}</RouterLink>
 			</div>
