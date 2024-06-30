@@ -17,8 +17,10 @@ export default {
 <template>
 	<section>
 		<p class="mb-3 mt-4 text-xs">There are {{ techbooks.length }} tech books:</p>
-		<div v-for="techbook in techbooks" :key="techbook.id" class="bg-gray-200 p-3 rounded mb-3">
-			<div class="font-semibold">{{ techbook.title }}</div>
+		<div v-for="techbook in techbooks" :key="techbook.id" class="bg-gray-200 p-3 rounded mb-3 min-h-[8rem]">
+			<!-- <img src="images/bashCookbook.jpg" alt="book" /> -->
+			
+			<div class="font-semibold"><img :src="`images/${techbook.idCode}.jpg`" alt="book" class="w-[4rem] float-right m-2" />{{ techbook.title }}</div>
 			<div class="italic">{{ techbook.description }}</div>
 		</div>
 	</section>
