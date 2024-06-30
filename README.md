@@ -12,6 +12,9 @@ TODO-GIF
 - Router
 - Prettier
 - ESLint
+- Vitest unit testing
+- Playwright e2e testing
+- component props
 
 ## component props
 
@@ -35,7 +38,7 @@ defineProps<{
 <SiteTitle title="Info Site" />
 ```
 
-## reformat
+## code formatting
 
 ```
 npm run format
