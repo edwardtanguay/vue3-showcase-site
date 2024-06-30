@@ -107,8 +107,10 @@ TODO-IMAGE
 
 ## Prettier
 
+- see `.prettierrc.json` for rules
+- formats on save
+- to format all files after rule change
+
 ```
 npm run format
 ```
-
-- see `.prettierrc.json` for rules
