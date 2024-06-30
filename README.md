@@ -12,7 +12,7 @@ TODO-GIF
 - Router
 - Prettier
 - ESLint
-- Vitest unit testing
+- unit testing (Vitest)
 - Playwright e2e testing - TODO
 - component props
 
@@ -46,7 +46,7 @@ npm run format
 
 - see `.prettier.json` for rules
 
-## testing (Vitest)
+## unit testing (Vitest)
 
 ```
 npm run:unit
