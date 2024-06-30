@@ -2,7 +2,7 @@
 
 This is a Vue3 template site created 2024-06-29.
 
-TODO-GIF
+![templatevue3](https://github.com/edwardtanguay/vue3-showcase-site/assets/446574/32965f7b-00b7-47f2-aca0-d0de78268264)
 
 ## tech features
 
