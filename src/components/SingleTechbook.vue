@@ -29,9 +29,15 @@ export default defineComponent({
 					:src="`/images/${techbook.idCode}.jpg`"
 					alt="book"
 					class="w-[4rem] float-right m-2 md:hidden"
-				/><RouterLink :to="`/techbooks/${techbook.id}`" :class="context === 'list' ? 'underline' : ''">{{
-					techbook.title
-				}}</RouterLink>
+				/>
+				<template v-if="context === 'list'">
+					<RouterLink :to="`/techbooks/${techbook.id}`" class="underline">{{
+						techbook.title
+					}}</RouterLink>
+				</template>
+				<template v-if="context === 'single'">
+					{{ techbook.title }}
+				</template>
 			</div>
 			<div class="bookDescription italic w-full">{{ techbook.description }}</div>
 		</section>
