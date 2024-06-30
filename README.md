@@ -16,6 +16,11 @@ This is a Vue3 template site created 2024-06-29.
 - Prettier
 - ESLint
 
+## app features
+
+- list/single pages
+- 404 page
+
 ## setup
 
 - clone repository
