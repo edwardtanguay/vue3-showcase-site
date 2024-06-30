@@ -22,7 +22,14 @@ export default defineComponent({
 
 <template>
 	<div class="bg-gray-200 p-3 rounded mb-3 min-h-[8rem] flex gap-3">
-		<img :src="`/images/${techbook.idCode}.jpg`" alt="book" class="w-[6rem] mdBook" />
+		<template v-if="context === 'list'">
+			<RouterLink :to="`/techbooks/${techbook.id}`" class="underline">
+				<img :src="`/images/${techbook.idCode}.jpg`" alt="book" class="w-[6rem] mdBook" />
+			</RouterLink>
+		</template>
+		<template v-if="context === 'single'">
+			<img :src="`/images/${techbook.idCode}.jpg`" alt="book" class="w-[6rem] mdBook" />
+		</template>
 		<section class="w-full">
 			<div class="bookTitle font-semibold md:text-xl">
 				<img
@@ -44,7 +51,7 @@ export default defineComponent({
 				<div class="bg-gray-100 w-fit mt-2 py-2 px-3 rounded shadow font-mono text-xs">
 					<div>Published: {{ techbook.yearMonth }}</div>
 					<div>Rank: {{ techbook.rank }}</div>
-				</div>	
+				</div>
 			</template>
 		</section>
 	</div>
