@@ -1,5 +1,4 @@
 <script lang="ts">
-import { RouterLink } from 'vue-router'
 import type { Techbook } from '@/types'
 import { defineComponent } from 'vue'
 
@@ -13,9 +12,6 @@ export default defineComponent({
 			type: String as () => string,
 			default: 'list'
 		}
-	},
-	components: {
-		RouterLink
 	}
 })
 </script>
@@ -23,9 +19,9 @@ export default defineComponent({
 <template>
 	<div class="bg-gray-200 p-3 rounded mb-3 min-h-[8rem] flex gap-3">
 		<template v-if="context === 'list'">
-			<RouterLink :to="`/techbooks/${techbook.id}`" class="underline">
+			<router-link :to="`/techbooks/${techbook.id}`" class="underline">
 				<img :src="`/images/${techbook.idCode}.jpg`" alt="book" class="w-[6rem] mdBook" />
-			</RouterLink>
+			</router-link>
 		</template>
 		<template v-if="context === 'single'">
 			<img :src="`/images/${techbook.idCode}.jpg`" alt="book" class="w-[6rem] mdBook h-fit" />
@@ -33,13 +29,13 @@ export default defineComponent({
 		<section class="w-full">
 			<div class="bookTitle font-semibold md:text-xl">
 				<template v-if="context === 'list'">
-					<RouterLink :to="`/techbooks/${techbook.id}`" class="underline">
+					<router-link :to="`/techbooks/${techbook.id}`" class="underline">
 						<img
 							:src="`/images/${techbook.idCode}.jpg`"
 							alt="book"
 							class="w-[4rem] float-right m-2 md:hidden"
 						/>
-					</RouterLink>
+					</router-link>
 				</template>
 				<template v-if="context === 'single'">
 					<img
@@ -49,9 +45,9 @@ export default defineComponent({
 					/>
 				</template>
 				<template v-if="context === 'list'">
-					<RouterLink :to="`/techbooks/${techbook.id}`" class="underline">{{
+					<router-link :to="`/techbooks/${techbook.id}`" class="underline">{{
 						techbook.title
-					}}</RouterLink>
+					}}</router-link>
 				</template>
 				<template v-if="context === 'single'">
 					{{ techbook.title }}
