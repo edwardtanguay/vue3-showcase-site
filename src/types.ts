@@ -3,4 +3,6 @@ export type Techbook = {
 	idCode: string;
 	title: string;
 	description: string;
+	yearMonth: string;
+	rank: string
 }

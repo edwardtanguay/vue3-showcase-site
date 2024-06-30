@@ -40,6 +40,12 @@ export default defineComponent({
 				</template>
 			</div>
 			<div class="bookDescription italic w-full">{{ techbook.description }}</div>
+			<template v-if="context === 'single'">
+				<div class="bg-gray-100 w-fit mt-2 py-2 px-3 rounded shadow font-mono text-xs">
+					<div>Published: {{ techbook.yearMonth }}</div>
+					<div>Rank: {{ techbook.rank }}</div>
+				</div>	
+			</template>
 		</section>
 	</div>
 </template>
