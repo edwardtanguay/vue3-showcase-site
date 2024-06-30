@@ -1,5 +1,5 @@
 <template>
-	<div class="item">
+	<div class="flex gap-2">
 		<i>
 			<slot name="icon"></slot>
 		</i>

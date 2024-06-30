@@ -12,7 +12,7 @@ TODO-GIF
 - Router
 - Prettier
 - ESLint
-- unit testing (Vitest)
+- unit testing with Vitest
 - Playwright e2e testing - TODO
 - component props
 
@@ -38,15 +38,15 @@ defineProps<{
 <SiteTitle title="Info Site" />
 ```
 
-## code formatting
+## Prettier
 
 ```
 npm run format
 ```
 
-- see `.prettier.json` for rules
+- see `.prettierrc.json` for rules
 
-## unit testing (Vitest)
+## unit testing with Vitest
 
 ```
 npm run:unit
