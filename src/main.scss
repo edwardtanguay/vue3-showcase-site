@@ -4,7 +4,7 @@
 
 @layer base {
 	.btn {
-		@apply bg-gray-500 text-white text-xl pt-0 pb-2 px-2 rounded;
+		@apply bg-gray-500 text-white text-xl rounded flex align-middle justify-center;
 	}
 	.smallcaps {
 		font-variant: small-caps;
