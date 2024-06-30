@@ -1,7 +1,9 @@
 <script lang="ts">
 import type { Techbook } from '@/types'
 import _techbooks from '../data/techbooks.json'
-import SingleTechbook from '../components/SingleTechBook.vue'
+import SingleTechbook from '../components/SingleTechbook.vue'
+import TestBook from '../components/TestBook.vue';
+import SiteTitle from '@/components/SiteTitle.vue';
 
 const techbooks: Techbook[] = structuredClone(_techbooks)
 techbooks.sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1))
@@ -9,7 +11,8 @@ techbooks.sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1
 export default {
 	data() {
 		return {
-			techbooks
+			techbooks,
+			SiteTitle
 		}
 	}
 }
@@ -18,10 +21,13 @@ export default {
 <template>
 	<section>
 		<p class="mb-3 mt-4 text-xs">There are {{ techbooks.length }} tech books:</p>
+			<SiteTitle title="nnn"/>
 		<template v-for="techbook in techbooks" :key="techbook.id">
 			<p>111</p>
+			<TestBook/>
+			<SiteTitle title="nnn"/>
 			<SingleTechbook :techbook="techbook" />
-			<p>222</p>
+			<p>222333</p>
 		</template>
 	</section>
 </template>
