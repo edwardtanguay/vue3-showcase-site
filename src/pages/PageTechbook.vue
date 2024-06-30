@@ -2,7 +2,7 @@
 import type { Techbook } from '@/types'
 import _techbooks from '../data/techbooks.json'
 
-const id = 8884;
+const id = 5;
 
 const techbooks: Techbook[] = structuredClone(_techbooks)
 const techbook = techbooks.find((m) => m.id === id)
