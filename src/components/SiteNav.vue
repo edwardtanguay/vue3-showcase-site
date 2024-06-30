@@ -3,8 +3,9 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-	<nav class="bg-gray-400 flex gap-2 px-2 pb-1 rounded mb-3">
+	<nav class="bg-gray-400 flex gap-x-3 gap-y-0 flex-wrap px-2 pb-1 rounded mb-3">
 		<RouterLink to="/">Home</RouterLink>
+		<RouterLink to="/techbooks">Tech Books</RouterLink>
 		<RouterLink to="/about">About</RouterLink>
 	</nav>
 </template>
