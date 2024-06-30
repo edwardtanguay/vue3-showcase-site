@@ -1,6 +1,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import ExampleBox from '@/components/ExampleBox.vue'
+import ExampleCounter from '@/examples/ExampleCounter.vue'
 
 export default defineComponent({
 	setup() {
@@ -24,7 +25,8 @@ export default defineComponent({
 		}
 	},
 	components: {
-		ExampleBox
+		ExampleBox,
+		ExampleCounter
 	}
 })
 </script>
@@ -36,5 +38,9 @@ export default defineComponent({
 	<ExampleBox>
 		<template #title>Display Simple Array</template>
 		<p>{{ colors.join(', ') }}</p>
+	</ExampleBox>
+	<ExampleBox>
+		<template #title>Interactive Counter</template>
+		<ExampleCounter/>
 	</ExampleBox>
 </template>
