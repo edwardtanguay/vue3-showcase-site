@@ -17,11 +17,34 @@ export default {
 <template>
 	<section>
 		<p class="mb-3 mt-4 text-xs">There are {{ techbooks.length }} tech books:</p>
-		<div v-for="techbook in techbooks" :key="techbook.id" class="bg-gray-200 p-3 rounded mb-3 min-h-[8rem]">
-			<!-- <img src="images/bashCookbook.jpg" alt="book" /> -->
-			
-			<div class="font-semibold"><img :src="`images/${techbook.idCode}.jpg`" alt="book" class="w-[4rem] float-right m-2" />{{ techbook.title }}</div>
-			<div class="italic">{{ techbook.description }}</div>
+		<div
+			v-for="techbook in techbooks"
+			:key="techbook.id"
+			class="bg-gray-200 p-3 rounded mb-3 min-h-[8rem] flex gap-3"
+		>
+			<img
+				:src="`images/${techbook.idCode}.jpg`"
+				alt="book"
+				class="w-[6rem] mdBook"
+			/>
+			<section>
+				<div class="bookTitle font-semibold md:text-xl">
+					<img
+						:src="`images/${techbook.idCode}.jpg`"
+						alt="book"
+						class="w-[4rem] float-right m-2 md:hidden"
+					/>{{ techbook.title }}
+				</div>
+				<div class="bookDescription italic">{{ techbook.description }}</div>
+			</section>
 		</div>
 	</section>
 </template>
+
+<style scoped lang="scss">
+@media (max-width: 767px) {
+	.mdBook {
+		display: none;
+	}
+}
+</style>
