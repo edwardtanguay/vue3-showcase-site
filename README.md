@@ -107,8 +107,8 @@ TODO-IMAGE
 
 ## Prettier
 
-- see `.prettierrc.json` for rules
 - formats on save
+- see `.prettierrc.json` for rules
 - to format all files after rule change
 
 ```
