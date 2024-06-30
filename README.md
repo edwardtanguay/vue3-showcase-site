@@ -17,7 +17,6 @@ TODO-GIF
 - Prettier
 - ESLint
 
-    
 ## setup
 
 - clone repository
@@ -26,8 +25,11 @@ TODO-GIF
 
 ## change port
 
-- **package.json**, line 7
-- `"dev": "vite --port 3010 --open",`
+**package.json**
+
+```ts
+"dev": "vite --port 3010 --open",
+```
 
 ## component props
 
