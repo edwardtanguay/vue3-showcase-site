@@ -12,7 +12,7 @@ import { RouterLink } from 'vue-router'
 <style scoped lang="scss">
 nav {
 	a.router-link-active {
-		color: rgb(255, 251, 0);
+		font-weight: bold;
 	}
 }
 </style>

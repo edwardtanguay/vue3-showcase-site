@@ -14,7 +14,7 @@ import InfoItem from '../components/InfoItem.vue'
 
 		<InfoItem>
 			<template #icon>2</template>
-			<template #heading>Vue.js</template>
+			<template #heading>Slot Components</template>
 			<div>These boxes are examples of slots.</div>
 		</InfoItem>
 
@@ -24,7 +24,10 @@ import InfoItem from '../components/InfoItem.vue'
 			<section class="flex flex-wrap gap-3 mt-2">
 				<div class="featureBox">TypeScript</div>
 				<div class="featureBox">Tailwind</div>
-				<div class="featureBox">Testing</div>
+				<div class="featureBox">Router</div>
+				<div class="featureBox">Responsive</div>
+				<div class="featureBox">Unit Testing</div>
+				<div class="featureBox">e2e Testing</div>
 			</section>
 		</InfoItem>
 	</main>

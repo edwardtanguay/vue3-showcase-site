@@ -5,13 +5,15 @@ import SiteNav from './components/SiteNav.vue'
 </script>
 
 <template>
-	<SiteTitle title="Info Site" />
-	<SiteNav />
-	<header>
-		<div class="wrapper">
-			<HelloWorld msg="You created it!" subtitle="A great site" />
-		</div>
-	</header>
+	<main class="bg-gray-300 p-6 md:w-[50rem] md:rounded">
+		<SiteTitle title="Info Site" />
+		<SiteNav />
+		<header>
+			<div class="wrapper">
+				<HelloWorld msg="You created it!" subtitle="A great site" />
+			</div>
+		</header>
 
-	<RouterView />
+		<RouterView />
+	</main>
 </template>

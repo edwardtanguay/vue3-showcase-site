@@ -1,5 +1,5 @@
 <template>
-	<div class="flex gap-4 mt-3 bg-gray-200 p-5 rounded w-fit">
+	<div class="flex gap-4 mt-3 bg-gray-200 p-5 rounded w-full md:w-fit">
 		<div class="text-4xl text-gray-700">
 			<slot name="icon"></slot>
 		</div>
