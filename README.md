@@ -105,7 +105,6 @@ npm run:e2e
 
 TODO-IMAGE
 
-
 ## Prettier
 
 ```

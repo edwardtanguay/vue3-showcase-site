@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import InfoItem from '../components/InfoItem.vue';
+import InfoItem from '../components/InfoItem.vue'
 </script>
 
 <template>
@@ -9,23 +9,19 @@ import InfoItem from '../components/InfoItem.vue';
 		<InfoItem>
 			<template #icon>1</template>
 			<template #heading>Vue.js</template>
-			<div>
-				This is a template site that runs on Vue 3 created with Vite.
-			</div>
+			<div>This is a template site that runs on Vue 3 created with Vite.</div>
 		</InfoItem>
 
 		<InfoItem>
 			<template #icon>2</template>
-			<template #heading>Slot Components</template>
-			<div>
-				These boxes are examples of slots.
-			</div>
+			<template #heading>Vue.js</template>
+			<div>These boxes are examples of slots.</div>
 		</InfoItem>
 
 		<InfoItem>
 			<template #icon>3</template>
 			<template #heading>Other Features</template>
-			<section class="flex gap-3 mt-1">
+			<section class="flex flex-wrap gap-3 mt-2">
 				<div class="featureBox">TypeScript</div>
 				<div class="featureBox">Tailwind</div>
 				<div class="featureBox">Testing</div>
@@ -35,10 +31,10 @@ import InfoItem from '../components/InfoItem.vue';
 </template>
 
 <style scoped lang="scss">
-	.featureBox {
-		border: 1px solid #888;
-		background-color: #eee;
-		border-radius: .3rem;
-		padding: .1rem .4rem .2rem .4rem;
-	}
+.featureBox {
+	border: 1px solid #888;
+	background-color: #eee;
+	border-radius: 0.3rem;
+	padding: 0.1rem 0.4rem 0.2rem 0.4rem;
+}
 </style>
