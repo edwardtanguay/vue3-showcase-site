@@ -1,6 +1,7 @@
 <script lang="ts">
 import type { Techbook } from '@/types'
 import _techbooks from '../data/techbooks.json'
+import { RouterLink } from 'vue-router'
 
 const techbooks: Techbook[] = structuredClone(_techbooks)
 techbooks.sort((a, b) => (a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1))
@@ -26,7 +27,9 @@ export default {
 							:src="`images/${techbook.idCode}.jpg`"
 							alt="book"
 							class="w-[4rem] float-right m-2 md:hidden"
-						/><a :href="`techbooks/${techbook.id}`" class="underline">{{ techbook.title }}</a>
+						/><RouterLink :to="`techbooks/${techbook.id}`" class="underline">{{
+							techbook.title
+						}}</RouterLink>
 					</div>
 					<div class="bookDescription italic">{{ techbook.description }}</div>
 				</section>
