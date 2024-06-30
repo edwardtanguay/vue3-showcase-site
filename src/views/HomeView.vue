@@ -27,7 +27,6 @@ import InfoItem from '../components/InfoItem.vue'
 				<div class="featureBox">Router</div>
 				<div class="featureBox">Responsive</div>
 				<div class="featureBox">Unit Testing</div>
-				<div class="featureBox">e2e Testing</div>
 			</section>
 		</InfoItem>
 	</main>
