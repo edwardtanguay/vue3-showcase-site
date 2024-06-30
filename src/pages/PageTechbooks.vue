@@ -21,9 +21,8 @@ export default {
 <template>
 	<section>
 		<p class="mb-3 mt-4 text-xs">There are {{ techbooks.length }} tech books:</p>
-		<SiteTitle title="nnn" />
 		<template v-for="techbook in techbooks" :key="techbook.id">
-			<SingleTechbook :techbook="techbook" kind="list" />
+			<SingleTechbook :techbook="techbook" />
 		</template>
 	</section>
 </template>
