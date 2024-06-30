@@ -30,7 +30,7 @@ export default defineComponent({
 			<p>Sorry, no tech book found with id {{ id }}.</p>
 		</div>
 		<div v-if="techbook">
-			<SingleTechbook :techbook="techbook" />
+			<SingleTechbook :techbook="techbook" kind="single" />
 		</div>
 	</section>
 </template>

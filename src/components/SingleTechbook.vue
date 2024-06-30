@@ -8,6 +8,10 @@ export default defineComponent({
 		techbook: {
 			type: {} as () => Techbook,
 			required: true
+		},
+		kind: {
+			type: String as () => string,
+			required: true
 		}
 	},
 	components: {
@@ -18,6 +22,7 @@ export default defineComponent({
 
 <template>
 	<div class="bg-gray-200 p-3 rounded mb-3 min-h-[8rem] flex gap-3">
+		[{{ kind }}]
 		<img :src="`/images/${techbook.idCode}.jpg`" alt="book" class="w-[6rem] mdBook" />
 		<section class="w-full">
 			<div class="bookTitle font-semibold md:text-xl">
