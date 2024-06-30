@@ -110,9 +110,6 @@ npm t
 
 ![grafik](https://github.com/edwardtanguay/vue3-showcase-site/assets/446574/476bc544-eec3-47e8-8533-550f60fdfb04)
 
-
-TODO-IMAGE
-
 ## Prettier
 
 - formats on save
