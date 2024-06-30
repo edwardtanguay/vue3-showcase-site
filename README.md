@@ -10,36 +10,12 @@ TODO-GIF
 - TypeScript
 - Tailwind/Sass
 - router
-- Prettier
-- ESLint
-- unit testing with Vitest
-- e2e testing with Playwright - TODO
 - component props
 - slot components
-
-## Prettier
-
-```
-npm run format
-```
-
-- see `.prettierrc.json` for rules
-
-## unit testing with Vitest
-
-```
-npm run:unit
-```
-
-![grafik](https://github.com/edwardtanguay/vue3-showcase-site/assets/446574/476bc544-eec3-47e8-8533-550f60fdfb04)
-
-## e2e testing with Playwright
-
-```
-npm run:e2e
-```
-
-TODO-IMAGE
+- unit testing with Vitest
+- e2e testing with Playwright - TODO
+- Prettier
+- ESLint
 
 ## component props
 
@@ -112,3 +88,28 @@ defineProps<{
 	</section>
 </InfoItem>
 ```
+
+## unit testing with Vitest
+
+```
+npm run:unit
+```
+
+![grafik](https://github.com/edwardtanguay/vue3-showcase-site/assets/446574/476bc544-eec3-47e8-8533-550f60fdfb04)
+
+## e2e testing with Playwright
+
+```
+npm run:e2e
+```
+
+TODO-IMAGE
+
+
+## Prettier
+
+```
+npm run format
+```
+
+- see `.prettierrc.json` for rules
