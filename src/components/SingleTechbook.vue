@@ -28,7 +28,7 @@ export default defineComponent({
 			</RouterLink>
 		</template>
 		<template v-if="context === 'single'">
-			<img :src="`/images/${techbook.idCode}.jpg`" alt="book" class="w-[6rem] mdBook" />
+			<img :src="`/images/${techbook.idCode}.jpg`" alt="book" class="w-[6rem] mdBook h-fit" />
 		</template>
 		<section class="w-full">
 			<div class="bookTitle font-semibold md:text-xl">
@@ -48,7 +48,6 @@ export default defineComponent({
 						class="w-[4rem] float-right m-2 md:hidden"
 					/>
 				</template>
-
 				<template v-if="context === 'list'">
 					<RouterLink :to="`/techbooks/${techbook.id}`" class="underline">{{
 						techbook.title
