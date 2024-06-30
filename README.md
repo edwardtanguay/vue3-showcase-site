@@ -21,6 +21,7 @@ This is a Vue 3 site with numerous common features. It can be used as a starter 
 - navigation: `SiteNav.vue`
 - list/single pages: `PageTechbooks.vue`
 - 404 page: `PageError404.vue`
+- reading from local JSON file: `techbooks.json`
 
 ## setup
 
