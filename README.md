@@ -13,7 +13,7 @@ TODO-GIF
 - Prettier
 - ESLint
 - Vitest unit testing
-- Playwright e2e testing
+- Playwright e2e testing - TODO
 - component props
 
 ## component props

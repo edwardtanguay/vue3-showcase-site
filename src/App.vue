@@ -2,7 +2,6 @@
 import { RouterView } from 'vue-router'
 import SiteTitle from './components/SiteTitle.vue'
 import SiteNav from './components/SiteNav.vue';
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
