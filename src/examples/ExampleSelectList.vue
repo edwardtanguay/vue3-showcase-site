@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { reactive, ref } from 'vue'
+import { computed, reactive, ref, watch } from 'vue'
 
 type Color = {
 	id: number
@@ -36,7 +36,17 @@ const colors: Color[] = reactive(_colors)
 const selectedColor = reactive(structuredClone(initialColor))
 const selectedColors: Color[] = reactive([])
 
+watch(message, (newMessage: string, oldMessage: string) => {
+	console.log(`message changed from "${oldMessage}" to "${newMessage}"`)
+})
 
+const message2 = computed(() => {
+	if (selectedColors.length === 0) {
+		return ''
+	} else {
+		return `Colors have been selected ${selectedColors.length} times, and blue was selected ${selectedColors.filter((m) => m.text === 'blue').length} times. `
+	}
+})
 
 const handleColorSelect = (id: number) => {
 	if (id) {
@@ -80,6 +90,9 @@ const handleColorSelect = (id: number) => {
 		</div>
 		<div v-if="message !== ''">
 			{{ message }}
+		</div>
+		<div v-if="message2 !== ''">
+			{{ message2 }}
 		</div>
 	</section>
 </template>
