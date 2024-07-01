@@ -3,6 +3,7 @@ import { defineComponent } from 'vue'
 import ExampleBox from '@/components/ExampleBox.vue'
 import ExampleCounter from '@/examples/ExampleCounter.vue'
 import ExampleSelectList from '@/examples/ExampleSelectList.vue'
+import ExampleLuckyNameGame from '@/examples/ExampleLuckyNameGame.vue'
 
 export default defineComponent({
 	setup() {
@@ -28,7 +29,8 @@ export default defineComponent({
 	components: {
 		ExampleBox,
 		ExampleCounter,
-		ExampleSelectList
+		ExampleSelectList,
+		ExampleLuckyNameGame
 	}
 })
 </script>
@@ -48,5 +50,9 @@ export default defineComponent({
 	<ExampleBox>
 		<template #title>Select List</template>
 		<ExampleSelectList />
+	</ExampleBox>
+	<ExampleBox>
+		<template #title>Lucky Name Game</template>
+		<ExampleLuckyNameGame />
 	</ExampleBox>
 </template>
