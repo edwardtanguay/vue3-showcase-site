@@ -1,50 +1,12 @@
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import ExampleBox from '@/components/ExampleBox.vue'
 import ExampleCounter from '@/examples/ExampleCounter.vue'
 import ExampleSelectList from '@/examples/ExampleSelectList.vue'
 import ExampleLuckyNameGame from '@/examples/ExampleLuckyNameGame.vue'
-
-export default defineComponent({
-	setup() {
-		const message = 'this is it'
-		const colors = [
-			'red',
-			'blue',
-			'green',
-			'yellow',
-			'purple',
-			'orange',
-			'pink',
-			'brown',
-			'gray',
-			'black'
-		]
-
-		return {
-			message,
-			colors
-		}
-	},
-	components: {
-		ExampleBox,
-		ExampleCounter,
-		ExampleSelectList,
-		ExampleLuckyNameGame
-	}
-})
 </script>
 <template>
 	<ExampleBox>
-		<template #title>Simple Message</template>
-		<p>Message: [{{ message }}]</p>
-	</ExampleBox>
-	<ExampleBox>
-		<template #title>Display Simple Array</template>
-		<p>{{ colors.join(', ') }}</p>
-	</ExampleBox>
-	<ExampleBox>
-		<template #title>Interactive Counter</template>
+		<template #title>Interactive Counter (defineComponent)</template>
 		<ExampleCounter class="mt-2" />
 	</ExampleBox>
 	<ExampleBox>
