@@ -32,7 +32,7 @@ export default defineComponent({
 		<div>allowed range = {{ lowerLimit }}-{{ upperLimit }}</div>
 		<div class="flex gap-2">
 			<button
-				:class="`btn w-[2rem] ${count <= lowerLimit ? 'opacity-50' : ''}`"
+				:class="`btn w-[2rem] align-items flex ${count <= lowerLimit ? 'opacity-50' : ''}`"
 				@click="decrement"
 				:disabled="count <= lowerLimit"
 			>
@@ -40,7 +40,7 @@ export default defineComponent({
 			</button>
 			<p class="text-2xl w-[2rem] text-center">{{ count }}</p>
 			<button
-				:class="`btn w-[2rem] ${count >= upperLimit ? 'opacity-50' : ''}`"
+				:class="`btn w-[2rem] align-items flex ${count >= upperLimit ? 'opacity-50' : ''}`"
 				@click="increment"
 				:disabled="count >= upperLimit"
 			>
