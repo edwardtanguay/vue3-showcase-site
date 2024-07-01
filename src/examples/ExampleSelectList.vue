@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 
 type Color = {
 	id: number
@@ -31,9 +31,12 @@ const initialColor: Color = {
 	htmlCode: ''
 }
 
+const message = ref('')
 const colors: Color[] = reactive(_colors)
 const selectedColor = reactive(structuredClone(initialColor))
 const selectedColors: Color[] = reactive([])
+
+
 
 const handleColorSelect = (id: number) => {
 	if (id) {
@@ -41,6 +44,7 @@ const handleColorSelect = (id: number) => {
 		if (color) {
 			Object.assign(selectedColor, color)
 			selectedColors.push(color)
+			message.value = `You have selected ${selectedColors.length} colors.`
 		}
 	}
 }
@@ -73,6 +77,9 @@ const handleColorSelect = (id: number) => {
 						.join(', ')
 				"
 			></span>
+		</div>
+		<div v-if="message !== ''">
+			{{ message }}
 		</div>
 	</section>
 </template>
