@@ -10,15 +10,15 @@ export default defineComponent({
 
 		const increment = () => {
 			count.value += Number(changeAmount.value)
-			if(count.value > upperLimit) {
-				count.value = upperLimit;
+			if (count.value > upperLimit) {
+				count.value = upperLimit
 			}
 		}
 
 		const decrement = () => {
 			count.value -= Number(changeAmount.value)
-			if(count.value < lowerLimit) {
-				count.value = lowerLimit;
+			if (count.value < lowerLimit) {
+				count.value = lowerLimit
 			}
 		}
 
@@ -28,15 +28,25 @@ export default defineComponent({
 </script>
 
 <template>
-	<div class="flex gap-2">
-		<button :class="`btn w-[2rem] ${count <= lowerLimit ? 'opacity-50' : ''}`" @click="decrement" :disabled="count <= lowerLimit">-</button>
-		<p class="text-2xl w-[2rem] text-center">{{ count }}</p>
-		<button :class="`btn w-[2rem] ${count >= upperLimit ? 'opacity-50' : ''}`" @click="increment" :disabled="count >= upperLimit">+</button>
-		<div>
-		change by <input v-model="changeAmount" class="w-[2rem] text-center"/>
+	<div class="flex gap-2 flex-col">
+		<div>allowed range = {{ lowerLimit }}-{{ upperLimit }}</div>
+		<div class="flex gap-2">
+			<button
+				:class="`btn w-[2rem] ${count <= lowerLimit ? 'opacity-50' : ''}`"
+				@click="decrement"
+				:disabled="count <= lowerLimit"
+			>
+				-
+			</button>
+			<p class="text-2xl w-[2rem] text-center">{{ count }}</p>
+			<button
+				:class="`btn w-[2rem] ${count >= upperLimit ? 'opacity-50' : ''}`"
+				@click="increment"
+				:disabled="count >= upperLimit"
+			>
+				+
+			</button>
 		</div>
-		<div>
-		allowed range: {{lowerLimit}}-{{upperLimit}}
-		</div>
+		<div>change by <input v-model="changeAmount" class="w-[2rem] text-center" /></div>
 	</div>
 </template>
