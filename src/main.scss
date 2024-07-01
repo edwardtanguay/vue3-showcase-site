@@ -9,6 +9,9 @@
 	.btn2 {
 		@apply bg-gray-200 text-gray-700 py-1 px-3 rounded flex align-middle justify-center;
 	}
+	.btn3 {
+		@apply bg-gray-400 text-black py-1 px-2 rounded flex align-middle justify-center text-sm;
+	}
 	.smallcaps {
 		font-variant: small-caps;
 	}
