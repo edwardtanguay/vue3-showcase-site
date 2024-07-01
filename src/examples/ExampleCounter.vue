@@ -3,15 +3,21 @@ import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
 	setup() {
-		const count = ref(0)
+		const count = ref(10)
 		const changeAmount = ref(2)
 
 		const increment = () => {
 			count.value += Number(changeAmount.value)
+			if(count.value > 20) {
+				count.value = 20;
+			}
 		}
 
 		const decrement = () => {
 			count.value -= Number(changeAmount.value)
+			if(count.value < 0) {
+				count.value = 0;
+			}
 		}
 
 		return { count, increment, decrement, changeAmount }
@@ -21,7 +27,7 @@ export default defineComponent({
 
 <template>
 	<div class="flex gap-2">
-		<button class="btn w-[2rem]" @click="decrement">-</button>
+		<button class="btn w-[2rem]" @click="decrement" :disabled="changeAmount <= 0">-</button>
 		<p class="text-2xl w-[2rem] text-center">{{ count }}</p>
 		<button class="btn w-[2rem]" @click="increment">+</button>
 		<div>
