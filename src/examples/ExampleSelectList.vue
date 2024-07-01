@@ -41,9 +41,7 @@ export default defineComponent({
 			if (id) {
 				const color = colors.find((m) => m.id === id)
 				if (color) {
-					selectedColor.id = color.id
-					selectedColor.text = color.text
-					selectedColor.htmlCode = color.htmlCode
+					Object.assign(selectedColor, color);
 					selectedColors.push(color)
 				}
 			}
