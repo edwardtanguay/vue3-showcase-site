@@ -22,13 +22,13 @@ const _colors = [
 export default defineComponent({
 	setup() {
 		const colors = ref(_colors)
-		const selectedColor = ref(colors.value[0])
+		const selectedColor = ref(null)
 
 		const handleColorSelect = (id: number) => {
 			if (id) {
 				const color = colors.value.find((m) => m.id === id)
 				if (color) {
-					alert(color.text)
+					selectedColor.value = structuredClone(color)
 				}
 			}
 		}
@@ -50,6 +50,9 @@ export default defineComponent({
 				{{ color.text }}
 			</button>
 		</div>
-		<div>selected color: {{ selectedColor.text }}</div>
+		<div v-if="selectedColor">
+			selected color:
+			<span :style="`color: ${selectedColor.htmlCode}; font-weight: bold`">{{ selectedColor.text }}</span>
+		</div>
 	</section>
 </template>
