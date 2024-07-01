@@ -18,16 +18,14 @@ const _colors = [
 
 export default defineComponent({
 	setup() {
-		const message = ref('hello')
 		const colors = ref(_colors)
 
-		return { message, colors }
+		return { colors }
 	}
 })
 </script>
 
 <template>
-	<div>message: {{ message }}</div>
 	<ul class="list-disc ml-6">
 		<li v-for="color in colors" :key="color.id">
 			{{ color.text }}
