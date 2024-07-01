@@ -19,12 +19,18 @@ const handleGuessSubmit = () => {
 		appState.value = 'nameNotInList'
 	}
 }
+
+const handleOther = (e: KeyboardEvent) => {
+	if (e.key !== 'Enter') {
+		appState.value = 'guessing'
+	}
+}
 </script>
 
 <template>
 	<p class="mb-2">Type in a name and press ENTER:</p>
 	<form @submit.prevent="handleGuessSubmit" class="mb-2">
-		<input v-model="guessedName" @keyup.enter="handleGuessSubmit" />
+		<input v-model="guessedName" @keyup.enter="handleGuessSubmit" @keyup="handleOther" />
 	</form>
 	<div v-if="appState === 'nameInList'">
 		Congratulations, {{ guessedName }} is a lucky name! You've won a prize. Will you accept it?
