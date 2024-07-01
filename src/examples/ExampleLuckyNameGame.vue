@@ -80,4 +80,7 @@ onMounted(() => {
 		</div>
 	</div>
 	<div v-if="winners.length > 0">Winners: {{ winners.join(', ') }}</div>
+	<div>
+	{{employees.map(m => m.lastName).join(', ')}}
+	</div>
 </template>
