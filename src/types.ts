@@ -6,3 +6,4 @@ export type Techbook = {
 	yearMonth: string;
 	rank: string
 }
+
