@@ -67,7 +67,7 @@ export default defineComponent({
 			}}</span>
 		</div>
 		<div v-if="selectedColors.length > 0">
-			You clicked on: {{selectedColors.map(m => m.text).join(', ')}}
+			You clicked on: <span v-html="selectedColors.map((m) => `<span style='font-weight: bold'>${m.text}</span>`).join(', ')"></span>
 		</div>
 	</section>
 </template>
