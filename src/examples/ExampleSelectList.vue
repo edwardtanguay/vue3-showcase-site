@@ -26,9 +26,9 @@ export default defineComponent({
 </script>
 
 <template>
-	<ul class="list-disc ml-6">
-		<li v-for="color in colors" :key="color.id">
+	<div class="flex gap-2 mt-2">
+		<button class="btn2" v-for="color in colors" :key="color.id">
 			{{ color.text }}
-		</li>
-	</ul>
+		</button>
+	</div>
 </template>
