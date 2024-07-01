@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, reactive } from 'vue'
 
 const _colors = [
 	{
@@ -22,13 +22,15 @@ const _colors = [
 export default defineComponent({
 	setup() {
 		const colors = ref(_colors)
-		const selectedColor = ref(null)
+		const selectedColor = reactive(structuredClone(_colors[0]))
 
 		const handleColorSelect = (id: number) => {
 			if (id) {
 				const color = colors.value.find((m) => m.id === id)
 				if (color) {
-					selectedColor.value = structuredClone(color)
+					selectedColor.id = color.id;
+					selectedColor.text = color.text;
+					selectedColor.htmlCode = color.htmlCode;
 				}
 			}
 		}
