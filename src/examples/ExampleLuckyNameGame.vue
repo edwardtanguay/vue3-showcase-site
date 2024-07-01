@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, ref } from 'vue'
+import { reactive, ref, onMounted } from 'vue'
 
 const people = [{ name: 'Joseph' }, { name: 'Ava' }, { name: 'Olivia' }]
 
@@ -8,6 +8,7 @@ type AppState = 'guessing' | 'nameNotInList' | 'nameInList'
 const guessedName = ref('')
 let appState = ref<AppState>('guessing')
 const winners: string[] = reactive([])
+let employees: any[] = reactive([])
 
 const nameIsInList = (name: string): boolean => {
 	return people.find((m) => m.name === name) !== undefined
@@ -40,6 +41,22 @@ const handleReject = (): void => {
 const handleOk = (): void => {
 	appState.value = 'guessing'
 }
+
+const fetchData = async () => {
+	try {
+		const response = await fetch('https://edwardtanguay.vercel.app/share/employees.json')
+		if (!response.ok) {
+			throw new Error('Network error')
+		}
+		employees = await response.json()
+	} catch (err: any) {
+		throw new Error(err.message)
+	}
+}
+
+onMounted(() => {
+	fetchData()
+})
 </script>
 
 <template>
