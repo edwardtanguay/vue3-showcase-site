@@ -32,6 +32,14 @@ const handleAccept = (): void => {
 	guessedName.value = ''
 	appState.value = 'guessing'
 }
+
+const handleReject = (): void => {
+	appState.value = 'guessing'
+}
+
+const handleOk = (): void => {
+	appState.value = 'guessing'
+}
 </script>
 
 <template>
@@ -41,15 +49,18 @@ const handleAccept = (): void => {
 	</form>
 	<div v-if="appState === 'nameInList'">
 		<div class="mb-1">
-			Congratulations, {{ guessedName }} is a lucky name! You've won a prize. Will you accept it?
+			Congratulations, "{{ guessedName }}" is a lucky name! You've won a prize. Will you accept it?
 		</div>
 		<div class="flex gap-2">
 			<button class="btn3" @click="handleAccept">Accept</button>
-			<button class="btn3">Reject</button>
+			<button class="btn3" @click="handleReject">Reject</button>
 		</div>
 	</div>
 	<div v-if="appState === 'nameNotInList'">
-		I'm sorry, {{ guessedName }} is not in today's list of lucky names.
+		I'm sorry, "{{ guessedName }}" is not in today's list of lucky names.
+		<div class="flex gap-2">
+			<button class="btn3" @click="handleOk">Ok</button>
+		</div>
 	</div>
 	<div v-if="winners.length > 0">Winners: {{ winners.join(', ') }}</div>
 </template>
