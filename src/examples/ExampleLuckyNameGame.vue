@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import { reactive, ref, onMounted } from 'vue'
+import { getAll } from '@/data/peopleApi'
 
-const people = [{ name: 'Joseph' }, { name: 'Ava' }, { name: 'Olivia' }]
+// const people = [{ name: 'Joseph' }, { name: 'Ava' }, { name: 'Olivia' }]
 
 type AppState = 'guessing' | 'nameNotInList' | 'nameInList'
 
 const guessedName = ref('')
 let appState = ref<AppState>('guessing')
 const winners: string[] = reactive([])
-let employees: any[] = reactive([])
+let people = reactive<any[]>([])
 
 const nameIsInList = (name: string): boolean => {
 	return people.find((m) => m.name === name) !== undefined
@@ -44,11 +45,7 @@ const handleOk = (): void => {
 
 const fetchData = async () => {
 	try {
-		const response = await fetch('https://edwardtanguay.vercel.app/share/employees.json')
-		if (!response.ok) {
-			throw new Error('Network error')
-		}
-		employees = await response.json()
+		people = await getAll()
 	} catch (err: any) {
 		throw new Error(err.message)
 	}
@@ -80,7 +77,4 @@ onMounted(() => {
 		</div>
 	</div>
 	<div v-if="winners.length > 0">Winners: {{ winners.join(', ') }}</div>
-	<div>
-	{{employees.map(m => m.lastName).join(', ')}}
-	</div>
 </template>
