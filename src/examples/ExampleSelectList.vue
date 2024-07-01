@@ -25,10 +25,16 @@ const _colors: Color[] = [
 	}
 ]
 
+const initialColor: Color = {
+	id: 0,
+	text: '',
+	htmlCode: ''
+}
+
 export default defineComponent({
 	setup() {
 		const colors: Color[] = reactive(_colors)
-		const selectedColor = reactive(structuredClone(_colors[0]))
+		const selectedColor = reactive(structuredClone(initialColor))
 		const selectedColors: Color[] = reactive([])
 
 		const handleColorSelect = (id: number) => {
@@ -60,14 +66,21 @@ export default defineComponent({
 				{{ color.text }}
 			</button>
 		</div>
-		<div v-if="selectedColor">
+		<div v-if="selectedColor.id !== 0">
 			selected color:
 			<span :style="`color: ${selectedColor.htmlCode}; font-weight: bold`">{{
 				selectedColor.text
 			}}</span>
 		</div>
 		<div v-if="selectedColors.length > 0">
-			You clicked on: <span v-html="selectedColors.map((m) => `<span style='color: ${m.htmlCode}'>${m.text}</span>`).join(', ')"></span>
+			colors you have clicked on:
+			<span
+				v-html="
+					selectedColors
+						.map((m) => `<span style='color: ${m.htmlCode}'>${m.text}</span>`)
+						.join(', ')
+				"
+			></span>
 		</div>
 	</section>
 </template>
