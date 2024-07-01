@@ -21,7 +21,10 @@ export default defineComponent({
 		const colors = ref(_colors)
 
 		const handleColorSelect = (id: number) => {
-			alert('clicked id ' + id)
+			if (id) {
+				const color = colors.value.find((m) => m.id === id)
+				alert(color?.text)
+			}
 		}
 
 		return { colors, handleColorSelect }
