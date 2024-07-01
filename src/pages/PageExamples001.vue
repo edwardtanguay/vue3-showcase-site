@@ -2,6 +2,7 @@
 import { defineComponent } from 'vue'
 import ExampleBox from '@/components/ExampleBox.vue'
 import ExampleCounter from '@/examples/ExampleCounter.vue'
+import ExampleSelectList from '@/examples/ExampleSelectList.vue'
 
 export default defineComponent({
 	setup() {
@@ -26,7 +27,8 @@ export default defineComponent({
 	},
 	components: {
 		ExampleBox,
-		ExampleCounter
+		ExampleCounter,
+		ExampleSelectList
 	}
 })
 </script>
@@ -41,6 +43,10 @@ export default defineComponent({
 	</ExampleBox>
 	<ExampleBox>
 		<template #title>Interactive Counter</template>
-		<ExampleCounter class="mt-2"/>
+		<ExampleCounter class="mt-2" />
+	</ExampleBox>
+	<ExampleBox>
+		<template #title>Select List</template>
+		<ExampleSelectList />
 	</ExampleBox>
 </template>
