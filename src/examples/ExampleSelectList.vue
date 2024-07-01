@@ -20,14 +20,18 @@ export default defineComponent({
 	setup() {
 		const colors = ref(_colors)
 
-		return { colors }
+		const handleColorSelect = () => {
+			alert('clicked')
+		}
+
+		return { colors, handleColorSelect }
 	}
 })
 </script>
 
 <template>
 	<div class="flex gap-2 mt-2">
-		<button class="btn2" v-for="color in colors" :key="color.id">
+		<button class="btn2" @click="handleColorSelect" v-for="color in colors" :key="color.id">
 			{{ color.text }}
 		</button>
 	</div>
