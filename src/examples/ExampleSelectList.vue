@@ -1,5 +1,5 @@
-<script lang="ts">
-import { defineComponent, reactive } from 'vue'
+<script lang="ts" setup>
+import { reactive } from 'vue'
 
 type Color = {
 	id: number
@@ -31,25 +31,19 @@ const initialColor: Color = {
 	htmlCode: ''
 }
 
-export default defineComponent({
-	setup() {
-		const colors: Color[] = reactive(_colors)
-		const selectedColor = reactive(structuredClone(initialColor))
-		const selectedColors: Color[] = reactive([])
+const colors: Color[] = reactive(_colors)
+const selectedColor = reactive(structuredClone(initialColor))
+const selectedColors: Color[] = reactive([])
 
-		const handleColorSelect = (id: number) => {
-			if (id) {
-				const color = colors.find((m) => m.id === id)
-				if (color) {
-					Object.assign(selectedColor, color);
-					selectedColors.push(color)
-				}
-			}
+const handleColorSelect = (id: number) => {
+	if (id) {
+		const color = colors.find((m) => m.id === id)
+		if (color) {
+			Object.assign(selectedColor, color)
+			selectedColors.push(color)
 		}
-
-		return { colors, handleColorSelect, selectedColor, selectedColors }
 	}
-})
+}
 </script>
 
 <template>
