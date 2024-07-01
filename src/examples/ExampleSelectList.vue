@@ -4,36 +4,42 @@ import { defineComponent, ref } from 'vue'
 const _colors = [
 	{
 		id: 1,
-		text: 'green'
+		text: 'green',
+		htmlCode: '#008000'
 	},
 	{
 		id: 2,
-		text: 'red'
+		text: 'red',
+		htmlCode: '#FF0000'
 	},
 	{
 		id: 3,
-		text: 'blue'
+		text: 'blue',
+		htmlCode: '#0000FF'
 	}
 ]
 
 export default defineComponent({
 	setup() {
 		const colors = ref(_colors)
+		const selectedColor = ref(colors.value[0])
 
 		const handleColorSelect = (id: number) => {
 			if (id) {
 				const color = colors.value.find((m) => m.id === id)
-				alert(color?.text)
+				if (color) {
+					alert(color.text)
+				}
 			}
 		}
 
-		return { colors, handleColorSelect }
+		return { colors, handleColorSelect, selectedColor }
 	}
 })
 </script>
 
 <template>
-	<div class="flex gap-2 mt-2">
+	<section class="flex gap-2 mt-2">
 		<button
 			class="btn2"
 			@click="handleColorSelect(color.id)"
@@ -42,5 +48,8 @@ export default defineComponent({
 		>
 			{{ color.text }}
 		</button>
-	</div>
+		<div>
+			selected color: {{selectedColor.text}}	
+		</div>
+	</section>
 </template>
