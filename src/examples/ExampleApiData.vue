@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { reactive, onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 
 type Employee = {
 	firstName: string
 	lastName: string
 }
 
-let employees: Employee[] = reactive([])
+let employees = ref<Employee[]>([])
 
 const fetchData = async () => {
 	try {
@@ -14,7 +14,7 @@ const fetchData = async () => {
 		if (!response.ok) {
 			throw new Error('Network error')
 		}
-		employees = await response.json()
+		employees.value = await response.json()
 		console.log(employees)
 	} catch (err: any) {
 		throw new Error(err.message)
