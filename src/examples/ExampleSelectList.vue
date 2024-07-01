@@ -1,7 +1,13 @@
 <script lang="ts">
 import { defineComponent, ref, reactive } from 'vue'
 
-const _colors = [
+type Color = {
+	id: number
+	text: string
+	htmlCode: string
+}
+
+const _colors: Color[] = [
 	{
 		id: 1,
 		text: 'green',
@@ -21,21 +27,23 @@ const _colors = [
 
 export default defineComponent({
 	setup() {
-		const colors = ref(_colors)
+		const colors: Color[] = reactive(_colors)
 		const selectedColor = reactive(structuredClone(_colors[0]))
+		const selectedColors: Color[] = reactive([])
 
 		const handleColorSelect = (id: number) => {
 			if (id) {
-				const color = colors.value.find((m) => m.id === id)
+				const color = colors.find((m) => m.id === id)
 				if (color) {
-					selectedColor.id = color.id;
-					selectedColor.text = color.text;
-					selectedColor.htmlCode = color.htmlCode;
+					selectedColor.id = color.id
+					selectedColor.text = color.text
+					selectedColor.htmlCode = color.htmlCode
+					selectedColors.push(color)
 				}
 			}
 		}
 
-		return { colors, handleColorSelect, selectedColor }
+		return { colors, handleColorSelect, selectedColor, selectedColors }
 	}
 })
 </script>
@@ -54,7 +62,12 @@ export default defineComponent({
 		</div>
 		<div v-if="selectedColor">
 			selected color:
-			<span :style="`color: ${selectedColor.htmlCode}; font-weight: bold`">{{ selectedColor.text }}</span>
+			<span :style="`color: ${selectedColor.htmlCode}; font-weight: bold`">{{
+				selectedColor.text
+			}}</span>
+		</div>
+		<div v-if="selectedColors.length > 0">
+			You clicked on: {{selectedColors.map(m => m.text).join(', ')}}
 		</div>
 	</section>
 </template>
