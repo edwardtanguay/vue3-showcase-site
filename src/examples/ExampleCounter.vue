@@ -27,8 +27,8 @@ export default defineComponent({
 
 <template>
 	<div class="flex gap-2">
-		<button :class="`btn w-[2rem] ${changeAmount === 6 ? 'text-red-600' : ''}`" @click="decrement" :disabled="changeAmount <= 0">-</button>
-		<p :class="['text-2xl', 'w-[2rem]', changeAmount === 6 ? 'text-red-400' : '']">{{ count }}</p>
+		<button :class="`btn w-[2rem] ${count <= 0 ? 'opacity-50' : ''}`" @click="decrement" :disabled="changeAmount <= 0">-</button>
+		<p class="text-2xl w-[2rem] text-center">{{ count }}</p>
 		<button class="btn w-[2rem]" @click="increment">+</button>
 		<div>
 		change by <input v-model="changeAmount" class="w-[2rem] text-center"/>
