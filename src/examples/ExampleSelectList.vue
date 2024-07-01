@@ -39,17 +39,17 @@ export default defineComponent({
 </script>
 
 <template>
-	<section class="flex gap-2 mt-2">
-		<button
-			class="btn2"
-			@click="handleColorSelect(color.id)"
-			v-for="color in colors"
-			:key="color.id"
-		>
-			{{ color.text }}
-		</button>
-		<div>
-			selected color: {{selectedColor.text}}	
+	<section class="flex gap-2 mt-2 flex-col">
+		<div class="flex gap-2">
+			<button
+				class="btn2"
+				@click="handleColorSelect(color.id)"
+				v-for="color in colors"
+				:key="color.id"
+			>
+				{{ color.text }}
+			</button>
 		</div>
+		<div>selected color: {{ selectedColor.text }}</div>
 	</section>
 </template>
